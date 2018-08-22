@@ -7,6 +7,7 @@
     "body-parser": "^1.18.3",
     "codecov": "^3.0.4",
     "dot-env": "^0.0.1",
+    "env2": "^2.2.2",
     "eslint": "^5.4.0",
     "handlebars": "^4.0.11",
     "helmet": "^3.13.0",
@@ -19,8 +20,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon src/index.js",
+    "test": "NODE_ENV=test node database/db_build.js",
+    "dev": "nodemon src/index.js",
     "start": "node src/index.js"
   },
   "repository": {
