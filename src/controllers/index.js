@@ -6,7 +6,7 @@ const login = require("./login");
 const error = require("./error");
 const list = require("./list");
 
-const dbQuery = require("./../model/quieries/queries.js")
+const dbQuery = require("./../model/queries/queries.js");
 
 router.get("/", home.get);
 router.get("/login", login.get);
