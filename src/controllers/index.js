@@ -4,12 +4,21 @@ const router = express.Router();
 const home = require("./home");
 const login = require("./login");
 const error = require("./error");
-const list = require("./list");
+const profile = require("./profile");
+const signup = require("./signup");
 
-const dbQuery = require("./../model/queries/queries.js");
+const sessionChecker = (req, res, next) => {
+    if (req.session.user && req.cookies.user_sid) {
+        res.redirect("/login");
+    } else {
+        next();
+    }
+};
 
-router.get("/", home.get);
-router.get("/login", login.get);
-router.get("/list", list.get);
+router.get("/", sessionChecker, home.get);
+router.get("/login", sessionChecker, login.get);
+router.get("/profile", profile.get);
+router.get("/signup", signup.get);
+router.post("/signup", signup.post);
 
 module.exports = router;
