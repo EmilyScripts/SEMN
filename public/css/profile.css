@@ -1,0 +1,20 @@
+.profile-div {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  margin: auto;
+  text-align: center;
+}
+
+.profile-image > img {
+  width: 40vw;
+  /* margin: auto; */
+}
+
+.github-icon {
+
+}
+
+li {
+  list-style: none;
+}
