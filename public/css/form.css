@@ -46,6 +46,16 @@ form {
   font-weight: 400;
 }
 
+h3 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
 label {
   font-size: 18px;
   margin: 0 auto;
@@ -73,11 +83,33 @@ button {
 
 textarea {
   font-size: 18px;
-  /* background: #f5f5f5; */
 }
 
-#github-icon {
-
+.github-icon {
   height:50px;
   width: 50px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-div {
+  border: solid red 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-color: white;
+}
+
+ul,
+a {
+  display: flex;
+}
+
+li {
+  display: flex;
+  justify-content: space-around;
 }
