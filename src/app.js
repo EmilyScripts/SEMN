@@ -1,10 +1,31 @@
+// bring in requires
 const express = require("express");
 const exphbs = require("express-handlebars");
 const compression = require("compression");
 const path = require("path");
 const controllers = require("./controllers/index");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const mime = require("mime-types");
+
+// handle image uploads with multer
+const multer = require("multer");
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/");
+    },
+    filename: (req, file, cb) => {
+        const ext = mime.extension(file.mimetype);
+        cb(null, `${req.body.fname}-${Date.now()}.${ext}`);
+    }
+});
+const upload = multer({ storage });
+
+// spin up our app
 const app = express();
 
+// set app options and handlebars
 app.set("port", process.env.PORT || 3000);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -17,10 +38,25 @@ app.engine(
         defaultLayout: "main"
     })
 );
+app.use(
+    session({
+        key: "user_sid",
+        secret: "somerandonstuffs",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            expires: 600000
+        }
+    })
+);
 app.use(compression());
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "..", "public")));
+
 app.use(controllers);
 
+// spin up :D
 app.listen(app.get("port"), () => {
     console.log(`App running on port: ${app.get("port")}`);
 });
