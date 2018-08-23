@@ -20,9 +20,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "NODE_ENV=test node database/db_build.js",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "test": "NODE_ENV=test nyc tape ./test/*.js | tap-spec",
+    "dev": "NODE_ENV=test node database/db_build.js",
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
