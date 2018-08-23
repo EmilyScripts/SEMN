@@ -7,7 +7,7 @@ const runDbBuild = cb => {
   db_connection.query(sql, (err, res) => {
   if (err) return err;
   console.log(res);
-});
+  });
 }
 
-runDbBuild();
+module.exports = runDbBuild;
