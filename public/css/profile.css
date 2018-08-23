@@ -1,4 +1,4 @@
-.profile-div {
+/* .profile-div {
   display: flex;
   flex-direction: column;
   border: 1px solid red;
@@ -9,12 +9,4 @@
 .profile-image > img {
   width: 40vw;
   /* margin: auto; */
-}
-
-.github-icon {
-
-}
-
-li {
-  list-style: none;
 }
