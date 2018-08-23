@@ -18,6 +18,8 @@ app.engine(
   })
 );
 app.use(compression());
+console.log(path.join(__dirname, '..', 'public'));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(controllers);
 
 app.listen(app.get("port"), () => {
