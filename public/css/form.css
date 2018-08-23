@@ -104,7 +104,8 @@ textarea {
   background-color: white;
 }
 
-ul {
+ul,
+a {
   display: flex;
 }
 
