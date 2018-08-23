@@ -1,44 +1,44 @@
 {
-  "name": "semn",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "codecov": "^3.0.4",
-    "dot-env": "^0.0.1",
-    "env2": "^2.2.2",
-    "eslint": "^5.4.0",
-    "handlebars": "^4.0.11",
-    "compression": "^1.7.3",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "helmet": "^3.13.0",
-    "pg": "^7.4.3"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.3",
-    "nyc": "^12.0.2",
-    "supertest": "^3.1.0",
-    "tap-spec": "^5.0.0",
-    "tape": "^4.9.1",
-    "eslint": "^5.4.0"
-  },
-  "scripts": {
-    "db": "NODE_ENV=test node database/db_build.js",
-    "dev": "nodemon src/app.js",
-    "start": "node src/app.js",
-    "test": "NODE_ENV=test nyc tape ./tests/*.js | tap-spec",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sunuwars/SEMN.git"
-  },
-  "author": "Sangita, Emily, Nathalie and Martin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sunuwars/SEMN/issues"
-  },
-  "homepage": "https://github.com/sunuwars/SEMN#readme"
+    "name": "semn",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "codecov": "^3.0.4",
+        "dot-env": "^0.0.1",
+        "env2": "^2.2.2",
+        "eslint": "^5.4.0",
+        "handlebars": "^4.0.11",
+        "compression": "^1.7.3",
+        "express": "^4.16.3",
+        "express-handlebars": "^3.0.0",
+        "helmet": "^3.13.0",
+        "pg": "^7.4.3"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.3",
+        "nyc": "^12.0.2",
+        "supertest": "^3.1.0",
+        "tap-spec": "^5.0.0",
+        "tape": "^4.9.1",
+        "eslint": "^5.4.0"
+    },
+    "scripts": {
+        "db": "NODE_ENV=test node database/db_build.js",
+        "dev": "nodemon src/app.js",
+        "start": "node src/app.js",
+        "test": "NODE_ENV=test nyc tape ./test/*.js | tap-spec",
+        "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sunuwars/SEMN.git"
+    },
+    "author": "Sangita, Emily, Nathalie and Martin",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sunuwars/SEMN/issues"
+    },
+    "homepage": "https://github.com/sunuwars/SEMN#readme"
 }

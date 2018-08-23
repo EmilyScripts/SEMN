@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS users_id_seq CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(20) UNIQUE NOT NULL,
+  username VARCHAR(20) NOT NULL,
   first_name VARCHAR(20) NOT NULL,
   last_name VARCHAR(20) NOT NULL,
   bio TEXT NOT NULL,
