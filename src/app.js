@@ -7,20 +7,6 @@ const controllers = require("./controllers/index");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const mime = require("mime-types");
-
-// handle image uploads with multer
-const multer = require("multer");
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/");
-    },
-    filename: (req, file, cb) => {
-        const ext = mime.extension(file.mimetype);
-        cb(null, `${req.body.fname}-${Date.now()}.${ext}`);
-    }
-});
-const upload = multer({ storage });
 
 // spin up our app
 const app = express();
