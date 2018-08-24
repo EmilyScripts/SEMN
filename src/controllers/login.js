@@ -14,7 +14,7 @@ exports.post = (req, res) => {
             res.redirect("/profile");
         } else {
             console.log("Bad login");
-            res.redirect("/login");
+            res.redirect("/home");
         }
     });
 };
