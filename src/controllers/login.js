@@ -11,7 +11,7 @@ exports.post = (req, res) => {
         const hashPassword = result;
         if (bcrypt.compareSync(password, hashPassword)) {
             req.session.user = JSON.stringify({ username, hashPassword });
-            res.redirect("/login");
+            res.redirect("/profile");
         } else {
             console.log("Bad login");
             res.redirect("/login");
