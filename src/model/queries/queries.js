@@ -2,15 +2,16 @@ const db = require("../../../database/db_connection");
 
 const dbQuery = {
     // log in
-    getFacster: (username, cb) => {
-        let query = `SELECT * FROM users WHERE username = '${username}'`;
+    getFacster: (cb) => {
+        let query = `SELECT * FROM users;`;
         db.query(query, (err, res) => {
             if (err) {
-                cb("Error!", null);
+              cb("Error!", null);
             } else if (res.rowCount === 0) {
-                cb(true, null);
+              cb(true, null);
             } else {
-                cb(null, res);
+              // console.log('this is res:', res)
+              cb(null, res);
             }
         });
     },
