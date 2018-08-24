@@ -1,7 +1,8 @@
+const queries = require("../model/queries/queries");
+
 exports.get = (req, res) => {
-    if (req.session.user && req.cookies.user_sid) {
-        res.render("profile");
-    } else {
-        res.redirect("/login");
-    }
+    queries.getFacster((err, result) => {
+      const profiles = result.rows;
+      res.render("profile", { profiles });
+    });
 };
